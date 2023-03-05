@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Game Zona</h1>
+        <form @submit.prevent="addUser">
+            <input type="text" v-model="text">
+            <select v-model="game">
+                <option>csgo</option>
+                <option>dota</option>
+                <option>pubg</option>
+            </select>
+            <button>Добавить</button>
+        </form>
+        <ul class="list">
+            <li>
+                <p>Csgo</p>
+                <p class="name" v-for="user in csgo"> {{ user.name }} | <button @click="delUser(user)" class="del">Удалить</button></p>
+            </li>
+            <li>
+                <p>battlefield  </p>
+                <p class="name" v-for="user in battlefield  ">{{ user.name }} | <button @click="delUser(user)" class="del">Удалить</button></p>
+            </li>
+            <li>
+                <p>Warzone</p>
+                <p class="name" v-for="user in Warzone">{{ user.name }} | <button @click="delUser(user)" class="del">Удалить</button></p>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
